@@ -3,10 +3,24 @@ package HomeWork07;
 public class HomeWork07 {
 
     public static void main(String[] args) {
-        final Cat cat = new Cat("Васька", 10);
-        final Plate plate = new Plate(5);
-        System.out.println(plate);
-        cat.eat(plate);
+        final Cat [] catArray = {
+                new Cat("Васька", 100),
+                new Cat ("Мэйсон", 180),
+                new Cat("Тимка", 80),
+                new Cat("Тайсон", 200),
+                new Cat("Пирожок", 40),
+        };
+        Plate plate = new Plate(0);
 
+        System.out.println("-----------------------------");
+        for(int i = 0; i < catArray.length; i++){
+            catArray[i].eat(plate, catArray);
+        }
+
+        System.out.println("-----------------------------");
+
+        for(int i = 0; i < catArray.length; i++){
+            catArray[i].printFull(plate, catArray);
+        }
     }
 }
